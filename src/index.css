@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Delius", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  color: black;
+}
+
+.rubik {
+  font-family: "Rubik Gemstones", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.londrina {
+  font-family: "Londrina Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.active{
+  color: #626060;
+}
+
+.front-button {
+  transition: all 0.4s ease-in-out;
+}
+
+.front-button:hover {
+  transform: scale(1.1);
+  background-color: #feb6d4;
+  color: black;
+}
+
+.front-button::after {
+  content: "";
+  position: absolute;
+  width: 8.8rem;
+  height: 4.2rem;
+  border: 1px solid black;
+  top: 0;
+  right: -0.1rem;
+  z-index: -1;
+  border-top-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 60%;
+  transform: rotate(-20deg);
+  transition: all 0.4s ease-in-out;
+}
+
+.front-button:hover::after {
+  transform: rotate(0deg);
+  border-color:#fc8dbb;
+  animation: wiggle 0.5s ease-in-out 0.4s;
+}
+
+.rawan::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  width: 420px;
+  height: 20px;
+  z-index: -20;
+  opacity: 0.6;
+  background-repeat: repeat-x;
+  background-size: 50px 20px;
+  background-position: 0 0;
+  background-image: url("data:image/svg+xml;utf8,<svg width='50' height='20' xmlns='http://www.w3.org/2000/svg'><path d='M0 10 Q12.5 0 25 10 T50 10' stroke='%23fc8dbb' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round' /></svg>");
+  animation: waveSlide 1s linear infinite;
+  animation-play-state: running;
+  transition: all 0.4s ease-in-out;
+}
+
+.rawan:hover::after {
+  transform: scale(1.15);
+  width: 360px;
+  right: 30px;
+}
+
+.projects{
+  animation: waveSlide 1s linear infinite;
+  animation-play-state: running;
+  transition: all 0.4s ease-in-out;
+}
+
+.projects-pa:hover .projects{
+  transform: scale(1.15);
+  width: 200px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.li-hover div,.li-hover i {
+  transition: transform 0.3s ease;
+}
+
+.li-hover:hover div{
+  transform: translateX(16px) scale(1.15);
+  color: black;
+}
+
+.li-hover:hover i{
+  transform: translateX(20px);
+  color: black;
+}
+
+.visit-button {
+  transition: all 0.4s ease-in-out;
+}
+
+.visit-button:hover {
+  transform: scale(1.1);
+  color: black;
+}
+
+.visit-button::after {
+  content: "";
+  position: absolute;
+  width: 5.8rem;
+  height: 2.6rem;
+  border: 1px solid black;
+  top: 0;
+  right: -0.1rem;
+  z-index: -1;
+  border-top-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 60%;
+  transform: rotate(-20deg);
+  transition: all 0.4s ease-in-out;
+}
+
+.visit-button:hover::after {
+  transform: rotate(0deg);
+  border-color:#626060;
+  animation: wiggle 0.5s ease-in-out 0.4s;
+}
+
+.contact-button {
+  transition: all 0.4s ease-in-out;
+}
+
+.contact-button:hover {
+  transform: scale(1.1);
+  color: black;
+}
+
+.contact-button::after {
+  content: "";
+  position: absolute;
+  width: 4.5rem;
+  height: 2.2rem;
+  border: 1px solid black;
+  top: 0;
+  right: -0.1rem;
+  z-index: -1;
+  border-top-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 60%;
+  transform: rotate(-20deg);
+  transition: all 0.4s ease-in-out;
+}
+
+.contact-button:hover::after {
+  transform: rotate(0deg);
+  border-color:#626060;
+  animation: wiggle 0.5s ease-in-out 0.4s;
+}
+
+@keyframes waveSlide {
+  0%   { background-position: 0 0; }
+  100% { background-position: 50px 0; }
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(-3deg);
+  }
+
+  75% {
+    transform: rotate(2deg);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .rawan::after {
+    width: 315px;
+  }
+  .rawan:hover::after {
+  width: 275px;
+  right: 20px;
+}
+
+}
+
+@media screen and (min-width: 1421px) {
+  .my-width {
+    @apply pb-5;
+  }
+}
+
+@media screen and (min-width: 1470px) {
+  .my-container {
+    @apply mx-20;
+  }
+}
+
+@theme {
+  --animate-star-movement-bottom: star-movement-bottom linear infinite alternate;
+  --animate-star-movement-top: star-movement-top linear infinite alternate;
+}
+
+@keyframes star-movement-bottom {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100%, 0%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0%);
+    opacity: 0;
+  }
+}
